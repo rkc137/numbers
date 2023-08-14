@@ -13,7 +13,6 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->big_dial, SIGNAL(sliderReleased()), this, SLOT(game()));
     connect(ui->little_dial, SIGNAL(sliderReleased()), this, SLOT(game()));
     connect(ui->action_new_game, SIGNAL(triggered()), SLOT(new_game()));
-    connect(ui->pushButton, SIGNAL(clicked(bool)), this, SLOT(menyay()));
     //connect(ui->lineEdit, SIGNAL(editingFinished()), this, menyay());
 
     for(int y = 1; y < 10; y++)
@@ -35,13 +34,6 @@ MainWindow::MainWindow(QWidget *parent) :
         }
     }
 
-}
-
-void MainWindow::menyay()
-{
-
-    map[ui->lineEdit->text().toInt()]->color = sqr::blue;
-    map[ui->lineEdit->text().toInt()]->setBrush(QBrush(QColor(Qt::blue)));
 }
 
 //https://habr.com/ru/post/183764/  прикол

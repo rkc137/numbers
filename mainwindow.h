@@ -27,7 +27,6 @@ public:
     bool turn = 0;
 
 public slots:
-    void menyay();
     void game();
     void new_game();
 
