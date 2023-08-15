@@ -8,8 +8,22 @@ sqr::sqr(int x, int y)
 
 void sqr::set_pos(int pos_x, int pos_y)
 {
-    this->setRect(pos_x * sqr_size, pos_y * sqr_size, sqr_size, sqr_size);
+    setRect(pos_x * sqr_size, pos_y * sqr_size, sqr_size, sqr_size);
     name->setPos(pos_x * sqr_size, pos_y * sqr_size);
+}
+
+void sqr::set_color(bool turn)
+{
+    if(turn)
+    {
+        setBrush(QBrush(QColor(255, 0, 0)));
+        color = sqr::red;
+    }
+    else
+    {
+        setBrush(QBrush(QColor(0, 100, 255)));
+        color = sqr::blue;
+    }
 }
 
 //void set_sqr_size(int square_capacity, int ui_scenes_width)

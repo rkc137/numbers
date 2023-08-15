@@ -3,6 +3,7 @@
 
 #include <QGraphicsRectItem>
 #include <QGraphicsTextItem>
+#include <QBrush>
 
 const int sqr_size = 67;
 
@@ -19,6 +20,7 @@ public:
     } color = none;
 
     void set_pos(int pos_x, int pos_y);
+    void set_color(bool turn);
 };
 
 //void set_sqr_size(int square_capacity, int ui_scenes_width);

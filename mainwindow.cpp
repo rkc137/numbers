@@ -13,15 +13,11 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->big_dial, SIGNAL(sliderReleased()), this, SLOT(game()));
     connect(ui->little_dial, SIGNAL(sliderReleased()), this, SLOT(game()));
     connect(ui->action_new_game, SIGNAL(triggered()), SLOT(new_game()));
-    //connect(ui->lineEdit, SIGNAL(editingFinished()), this, menyay());
 
     for(int y = 1; y < 10; y++)
-    {
         for(int x = 1; x < 10; x++)
-        {
             map.insert(x * y, new sqr(x , y));
-        }
-    }
+
     sqr *curret_sqr;
     int wall_size = int(qSqrt(map.size()));
     for(int y = 0, i = 0; y < wall_size; y++)
@@ -57,16 +53,8 @@ void MainWindow::game()
         ui->little_dial->setValue(little_dial_pos);
         return;
     }
-    if(turn)
-    {
-        curret_sqr->setBrush(QBrush(QColor(255, 0, 0)));
-        curret_sqr->color = sqr::red;
-    }
-    else
-    {
-        curret_sqr->setBrush(QBrush(QColor(0, 100, 255)));
-        curret_sqr->color = sqr::blue;
-    }
+    curret_sqr->set_color(turn);
+
     big_dial_pos = ui->big_dial->value();
     little_dial_pos = ui->little_dial->value();
     turn = !turn;
@@ -107,7 +95,7 @@ void MainWindow::new_game()
     ui->big_dial->setValue(1);
     ui->little_dial->setValue(1);
     big_dial_pos = little_dial_pos = 1;
-    sqr *curret_sqr;
+    sqr *curret_sqr;//он не знает что такое итераторы :)))))))))))))))))))))))))))))))))))))))))))))))))))))))))
     for(int i = 0, keys = map.size(); i < keys; i++)
     {
         curret_sqr = map[map.keys()[i]];
