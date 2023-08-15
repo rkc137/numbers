@@ -5,6 +5,10 @@ sqr::sqr(int x, int y)
     name = new QGraphicsTextItem(QString::number(x * y), this);
 }
 
+sqr::Color sqr::get_color() const
+{
+    return color;
+}
 
 void sqr::set_pos(int pos_x, int pos_y)
 {
@@ -12,17 +16,19 @@ void sqr::set_pos(int pos_x, int pos_y)
     name->setPos(pos_x * sqr_size, pos_y * sqr_size);
 }
 
-void sqr::set_color(bool turn)
+void sqr::set_color(enum Color c)
 {
-    if(turn)
+    color = c;
+    switch(color)
     {
+    case red:
         setBrush(QBrush(QColor(255, 0, 0)));
-        color = sqr::red;
-    }
-    else
-    {
+        break;
+    case blue:
         setBrush(QBrush(QColor(0, 100, 255)));
-        color = sqr::blue;
+        break;
+    case none:
+        setBrush(QBrush(QColor(255, 255, 255)));
     }
 }
 
