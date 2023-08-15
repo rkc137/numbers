@@ -16,10 +16,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
     for(int y = 1; y < 10; y++)
         for(int x = 1; x < 10; x++)
-            map.insert(x * y, new sqr(x , y));
+            map.insert(x * y, new sqr(QString::number(x * y)));
 
     QMap<int, sqr*>::iterator i = map.begin();
     int wall_size = int(qSqrt(map.size()));
+    sqr::set_sqr_size(wall_size, scena->width());
     for(int y = 0; y < wall_size; y++)
     {
         for(int x = 0; x < wall_size; x++, i++)

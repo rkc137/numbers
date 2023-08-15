@@ -31,15 +31,21 @@
      <widget class="QGraphicsView" name="graphicsView">
       <property name="minimumSize">
        <size>
-        <width>402</width>
-        <height>402</height>
+        <width>398</width>
+        <height>398</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>402</width>
-        <height>402</height>
+        <width>398</width>
+        <height>398</height>
        </size>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
       </property>
      </widget>
     </item>
@@ -59,6 +65,12 @@
         <property name="sliderPosition">
          <number>1</number>
         </property>
+        <property name="wrapping">
+         <bool>false</bool>
+        </property>
+        <property name="notchesVisible">
+         <bool>true</bool>
+        </property>
        </widget>
       </item>
       <item>
@@ -75,6 +87,15 @@
         <property name="sliderPosition">
          <number>1</number>
         </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="wrapping">
+         <bool>false</bool>
+        </property>
+        <property name="notchesVisible">
+         <bool>true</bool>
+        </property>
        </widget>
       </item>
      </layout>
@@ -87,7 +108,7 @@
      <x>0</x>
      <y>0</y>
      <width>420</width>
-     <height>26</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menumenu">

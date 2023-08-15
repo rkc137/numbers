@@ -1,8 +1,8 @@
 #include "sqr.h"
 
-sqr::sqr(int x, int y)
+sqr::sqr(QString num)
 {
-    name = new QGraphicsTextItem(QString::number(x * y), this);
+    name = new QGraphicsTextItem(num, this);
 }
 
 sqr::Color sqr::get_color() const
@@ -32,7 +32,7 @@ void sqr::set_color(enum Color c)
     }
 }
 
-//void set_sqr_size(int square_capacity, int ui_scenes_width)
-//{
-//    sqr_size = ui_scenes_width / square_capacity;
-//}
+void sqr::set_sqr_size(int square_capacity, int ui_scenes_width)
+{
+    sqr_size = ui_scenes_width / square_capacity;
+}

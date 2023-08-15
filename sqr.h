@@ -5,13 +5,12 @@
 #include <QGraphicsTextItem>
 #include <QBrush>
 
-const int sqr_size = 67;
-
 class sqr : public QGraphicsRectItem
 {
 
 public:
-    explicit sqr(int x, int y);
+    static void set_sqr_size(int square_capacity, int ui_scenes_width);
+    explicit sqr(QString num);
     enum Color
     {
         none,
@@ -23,10 +22,10 @@ public:
     void set_color(enum Color c);
 
 private:
+    inline static int sqr_size = 67;
+
     QGraphicsTextItem *name;
     Color color = none;
 };
-
-//void set_sqr_size(int square_capacity, int ui_scenes_width);
 
 #endif // SQR_H
