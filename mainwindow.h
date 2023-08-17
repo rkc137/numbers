@@ -23,11 +23,12 @@ public:
     ~MainWindow();
     QGraphicsScene *scena;
     QMap<int, sqr*> map;
+    int wall_size = 9;
+    bool turn = false;
     int big_dial_pos = 1, little_dial_pos = 1;
-    bool turn = 0;
 
 public slots:
-    void game();
+    void move();
     void new_game();
 
 private:

@@ -1,19 +1,14 @@
 #include "sqr.h"
 
-sqr::sqr(QString num)
+sqr::sqr(int x, int y) : QGraphicsRectItem((x - 1) * sqr_size, (y - 1) * sqr_size, sqr_size, sqr_size)
 {
-    name = new QGraphicsTextItem(num, this);
+    name = new QGraphicsTextItem(QString::number(x * y), this);
+    name->setPos(QPoint(rect().x(), rect().y()));
 }
 
 sqr::Color sqr::get_color() const
 {
     return color;
-}
-
-void sqr::set_pos(int pos_x, int pos_y)
-{
-    setRect(pos_x * sqr_size, pos_y * sqr_size, sqr_size, sqr_size);
-    name->setPos(pos_x * sqr_size, pos_y * sqr_size);
 }
 
 void sqr::set_color(enum Color c)
